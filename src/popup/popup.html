@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>飞书 → Notion</title>
+    <style>
+      body {
+        width: 280px;
+        font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+        padding: 12px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #666;
+        white-space: pre-wrap;
+      }
+      #setup-hint {
+        font-size: 12px;
+        color: #b00;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="save-btn">保存当前飞书文档到 Notion</button>
+    <div id="status"></div>
+    <div id="setup-hint" hidden>
+      还没配置 Notion，请先<a href="#" id="open-options">打开设置</a>。
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

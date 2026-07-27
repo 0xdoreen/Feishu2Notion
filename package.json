@@ -1,0 +1,23 @@
+{
+  "name": "feishu2notion",
+  "version": "0.1.0",
+  "description": "一键把飞书文档保存到 Notion database 的 Chrome 插件",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "esbuild": "^0.28.1",
+    "happy-dom": "^20.10.6",
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1"
+  }
+}

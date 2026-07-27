@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>飞书 → Notion 设置</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+        max-width: 640px;
+        margin: 24px auto;
+        padding: 0 16px;
+        color: #222;
+      }
+      section {
+        margin-bottom: 32px;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      input[type="text"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+      }
+      button {
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+      #connection-status {
+        margin-top: 8px;
+        font-size: 13px;
+      }
+      .hint-box {
+        margin-top: 8px;
+        padding: 10px 12px;
+        background: #fff8e6;
+        border: 1px solid #f0dca0;
+        border-radius: 4px;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .hint-box ol {
+        margin: 6px 0 0;
+        padding-left: 20px;
+      }
+      .database-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .database-row select {
+        flex: 1;
+        margin-bottom: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 6px 8px;
+        border-bottom: 1px solid #eee;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>飞书 → Notion 设置</h1>
+
+    <section>
+      <h2>1. 连接 Notion</h2>
+      <label for="token-input">Notion Integration Token</label>
+      <input id="token-input" type="password" placeholder="secret_xxx" />
+      <button id="test-connection">测试连接</button>
+      <div id="connection-status"></div>
+    </section>
+
+    <section>
+      <h2>2. 选择保存的 Database</h2>
+      <div class="database-row">
+        <select id="database-select" disabled>
+          <option value="">先测试连接...</option>
+        </select>
+        <button id="refresh-databases" disabled>刷新列表</button>
+      </div>
+      <button id="save-database" disabled>使用该 Database</button>
+      <div id="database-hint" class="hint-box" hidden></div>
+    </section>
+
+    <section>
+      <h2>3. 已保存的条目</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>保存时间</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="entries-body">
+          <tr>
+            <td colspan="3">尚未加载</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script src="options.js"></script>
+  </body>
+</html>
